@@ -4,6 +4,8 @@ Authors:      	Jacob Ramsey
 	        jr408614@ohio.edu   
 		
 		Ignatius Smith
+		Ohio University, B.S.C.S. May 2020
+		is116615@ohio.edu
 
 		Alya ElGamal
 

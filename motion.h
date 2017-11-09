@@ -1,6 +1,6 @@
 /********************************************************************************                
 Authors:      	Ignatius Smith                                                  
-                Ohio University, B.S.C.S. June 2020                             
+                Ohio University, B.S.C.S. May 2020                             
 	        is116615@ohio.edu   
 		
 		Jacob Ramsey
