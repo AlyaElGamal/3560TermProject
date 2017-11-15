@@ -93,6 +93,6 @@ class Motion{
 
 		double time;
 		double theta;	
-}
+};
 
 #endif

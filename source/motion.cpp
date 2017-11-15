@@ -31,7 +31,7 @@ Motion::Motion(){
 		intialposition_x = 0;
 		finalposition_x = 0;
 
-		acceleration_y = earthG;
+		acceleration_y = EARTHG;
 		intialvelocity_y = 0;
 		finalvelocity_y = 0;
 		intialposition_y = 0;

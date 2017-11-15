@@ -1,3 +1,7 @@
+14 November 2017
+Jacob Ramsey - created Makefile
+
+
 09 November 2017
 
 Ignatius Smith - added motion header and definition file although parameters are not completely worked ou

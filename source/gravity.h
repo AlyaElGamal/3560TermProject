@@ -20,15 +20,15 @@ Last Modified:  09 November 2017
 #ifndef GRAVITY_H
 #define GRAVITY_H
 
-double const sunG = 274.0;
-double const mercuryG = 3.7;
-double const venusG = 8.87;
-double const earthG = 9.807;
-double const moonG = 1.622;
-double const marsG = 3.711;
-double const jupiterG = 24.79;
-double const saturnG = 10.44;
-double const uranusG = 8.87;
-double const neptuneG = 11.15;
+const double SUNG = 274.0;
+const double MERCURYG = 3.7;
+const double VENUSG = 8.87;
+const double EARTHG = 9.807;
+const double MOONG = 1.622;
+const double MARSG = 3.711;
+const double JUPITERG = 24.79;
+const double SATURNG = 10.44;
+const double URANUSG = 8.87;
+const double NEPTUNEG = 11.15;
 
 #endif
