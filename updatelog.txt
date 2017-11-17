@@ -12,3 +12,8 @@ Alya ElGamal - started on GUI research
 07 November 2017
 
 Ignatius Smith (copied source to project repository Nov 7th)
+
+
+17 November 2017
+
+Alya - added accessor and set function declarations and definitions to motion.cpp and motion.h and work on more visual studio GUI research
