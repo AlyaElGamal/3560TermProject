@@ -4,6 +4,8 @@ Authors:      	Ignatius Smith
 	        is116615@ohio.edu   
 		
 		Jacob Ramsey
+		Ohio Univeristy, B.S.C.S May 2020
+		jr408614@ohio.edu
 
 		Alya ElGamal
 
@@ -12,11 +14,12 @@ Authors:      	Ignatius Smith
 File:           motion.h                                                         
 Description:    This file includes the function declarations for projectile motion
 		equations.                                             
-Last Modified:  09 November 2017                                                
+Last Modified:  17 November 2017                                                
 ********************************************************************************/
 
 #include <cstdlib>
 #include <cmath>
+#include <string>
 #ifndef MOTION_H
 #define MOTION_H
 
@@ -73,6 +76,8 @@ class Motion{
 
 		double getTime();
 		double getTheta();
+
+		void vectorToValues(const string& vector);
 
 	private:
 		double acceleration_x;
