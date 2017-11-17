@@ -1,0 +1,10 @@
+09 November 2017
+
+Ignatius Smith - added motion header and definition file although parameters are not completely worked ou
+Jacob Ramsey - defined gravity values for multiple planets and organized code
+Alya ElGamal - started on GUI research
+
+
+07 November 2017
+
+Ignatius Smith (copied source to project repository Nov 7th)
