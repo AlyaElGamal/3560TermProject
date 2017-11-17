@@ -38,6 +38,7 @@ class Motion{
 		tm- 	time
 		*/
 
+		//calculation functions
 		double calcAcc_X(double iv, double fv, double ip, double fp, double tm, double th);
 		double calcInitVelo_X(double ac, double fv, double ip, double fp, double tm, double th);
 		double calcFinalVelo_X(double iv, double ac, double ip, double fp, double tm, double th);
@@ -59,6 +60,7 @@ class Motion{
 
 		/*Parameters for these equations are correct*/
 
+		//accessor functions
 		double getAcc_X();
 		double getInitVelo_X();
 		double getFinalVelo_X();
@@ -73,6 +75,22 @@ class Motion{
 
 		double getTime();
 		double getTheta();
+	
+		//assignment functions
+		void setAcc_X(double c);
+		void setInitVelo_X(double c);
+		void setFinalVelo_X(double c);
+		void setInitPos_X(double c);
+		void setFinalPos_X(double c);
+
+		void setAcc_Y(double c);
+		void setInitVelo_Y(double c);
+		void setFinalVelo_Y(double c);
+		void setInitPos_Y(double c);
+		void setFinalPos_Y(double c);
+
+		void setTime(double c);
+		void setTheta(double c);
 
 	private:
 		double acceleration_x;
