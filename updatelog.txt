@@ -17,3 +17,18 @@ Ignatius Smith (copied source to project repository Nov 7th)
 17 November 2017
 
 Alya - added accessor and set function declarations and definitions to motion.cpp and motion.h and work on more visual studio GUI research
+
+28 November 2017
+
+Charlie - Added the files for the GUI
+
+Timeline: 
+  Thursday:
+  -Solve()
+  -Get textboxes working
+  -Working cmd line program
+  Friday:
+  -Tie up loose ends
+  -Documentation
+  -Diagrams
+  -Other software tools
