@@ -23,11 +23,11 @@ Alya - added accessor and set function declarations and definitions to motion.cp
 Charlie - Added the files for the GUI
 
 Timeline: 
-  Thursday:
+  Sunday:
   -Solve()
   -Get textboxes working
   -Working cmd line program
-  Friday:
+  Monday:
   -Tie up loose ends
   -Documentation
   -Diagrams
