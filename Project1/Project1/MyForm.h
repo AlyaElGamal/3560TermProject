@@ -101,7 +101,11 @@ namespace Project1 {
 			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
 			this->Switch = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
@@ -119,10 +123,6 @@ namespace Project1 {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->Switch->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -250,9 +250,27 @@ namespace Project1 {
 			this->tabPage1->Text = L"Coordinate";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(115, 26);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(96, 20);
+			this->label10->TabIndex = 16;
+			this->label10->Text = L"Y-componet";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(10, 26);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(96, 20);
+			this->label9->TabIndex = 15;
+			this->label9->Text = L"X-componet";
+			// 
 			// tabPage2
 			// 
-			this->tabPage2->BackColor = System::Drawing::Color::BlueViolet;
+			this->tabPage2->BackColor = System::Drawing::Color::LightGray;
 			this->tabPage2->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->tabPage2->Controls->Add(this->label8);
 			this->tabPage2->Controls->Add(this->label7);
@@ -272,9 +290,27 @@ namespace Project1 {
 			this->tabPage2->Location = System::Drawing::Point(4, 32);
 			this->tabPage2->Name = L"tabPage2";
 			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(367, 268);
+			this->tabPage2->Size = System::Drawing::Size(219, 268);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Polar";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(111, 26);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(51, 23);
+			this->label8->TabIndex = 27;
+			this->label8->Text = L"Angle";
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(21, 26);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(86, 23);
+			this->label7->TabIndex = 26;
+			this->label7->Text = L"Magnitude";
 			// 
 			// textBox8
 			// 
@@ -417,42 +453,6 @@ namespace Project1 {
 			this->label6->Size = System::Drawing::Size(80, 39);
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Time";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(21, 26);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(86, 23);
-			this->label7->TabIndex = 26;
-			this->label7->Text = L"Magnitude";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(111, 26);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(51, 23);
-			this->label8->TabIndex = 27;
-			this->label8->Text = L"Angle";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(10, 26);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(96, 20);
-			this->label9->TabIndex = 15;
-			this->label9->Text = L"X-componet";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(115, 26);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(96, 20);
-			this->label10->TabIndex = 16;
-			this->label10->Text = L"Y-componet";
 			// 
 			// MyForm
 			// 

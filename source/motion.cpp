@@ -28,19 +28,20 @@ const double PI  =3.141592653589793238463;
 
 Motion::Motion(){
 		acceleration_x = 0;
-		intialvelocity_x = 0;
+		initialvelocity_x = 0;
 		finalvelocity_x = 0;
-		intialposition_x = 0;
+		initialposition_x = 0;
 		finalposition_x = 0;
 
 		acceleration_y = EARTHG;
-		intialvelocity_y = 0;
+		initialvelocity_y = 0;
 		finalvelocity_y = 0;
-		intialposition_y = 0;
+		initialposition_y = 0;
 		finalposition_y = 0;
 
 		acceleration_vector = 0;
 		intialvelocity_vector = 0;
+		initialvelocity_vector = 0;
 		finalvelocity_vector = 0;
 
 		time = 0;
@@ -48,7 +49,27 @@ Motion::Motion(){
 }
 
 Motion Motion::solve(Motion m){
+	has_x_t_vf(m, 'x');
+	has_x_t_vi(m, 'x');
+	has_x_t_a(m, 'x');
+	has_x_vf_vi(m, 'x');
+	has_x_vi_a(m, 'x');
+	has_x_vf_a(m, 'x');
+	has_t_vf_vi(m, 'x');
+	has_t_vf_a(m, 'x');
+	has_t_vi_a(m, 'x');
+	has_vf_vi_a(m, 'x');
 
+	has_x_t_vf(m, 'y');
+	has_x_t_vi(m, 'y');
+	has_x_t_a(m, 'y');
+	has_x_vf_vi(m, 'y');
+	has_x_vi_a(m, 'y');
+	has_x_vf_a(m, 'y');
+	has_t_vf_vi(m, 'y');
+	has_t_vf_a(m, 'y');
+	has_t_vi_a(m, 'y');
+	has_vf_vi_a(m, 'y');
 }
 
 void Motion::has_x_t_vf(Motion m, char component){
@@ -68,13 +89,13 @@ void Motion::has_x_t_vf(Motion m, char component){
 
 void Motion::has_x_t_vi(Motion m, char component){
 	if(component == 'x'){
-		double vf = (2 * ((m.getFinalPos_X() - m.getInitPos_X()) / m.getTime()) - m.getInitVelo_X();
+		double vf = (2 * ((m.getFinalPos_X() - m.getInitPos_X()) / m.getTime()) - m.getInitVelo_X());
 		double a = (vf - m.getInitVelo_X()) / m.getTime();
 		m.setFinalVelo_X(vf);
 		m.setAcc_X(a);
 	}
 	else if(component == 'y'){
-		double vf = (2 * ((m.getFinalPos_Y() - m.getInitPos_Y()) / m.getTime()) - m.getInitVelo_Y();
+		double vf = (2 * ((m.getFinalPos_Y() - m.getInitPos_Y()) / m.getTime()) - m.getInitVelo_Y());
 		double a = (vf - m.getInitVelo_Y()) / m.getTime();
 		m.setFinalVelo_Y(vf);
 		m.setAcc_Y(a);
@@ -191,7 +212,7 @@ void Motion::has_t_vf_a(Motion m, char component){
 
 void Motion::has_t_vi_a(Motion m, char component){
 	if(component == 'x'){
-		double x = (m.getInitVelo_X() * m.getTime()) + ((m.getAcc_X * pow(m.getTime(), 2)) / 2);
+		double x = (m.getInitVelo_X() * m.getTime()) + ((m.getAcc_X() * pow(m.getTime(), 2)) / 2);
 		double vf = m.getInitVelo_X() + (m.getAcc_X() * m.getTime());
 		m.setFinalVelo_X(vf);
 		if (m.getInitPos_X() == NULL || m.getInitPos_X() == 0){
@@ -201,7 +222,7 @@ void Motion::has_t_vi_a(Motion m, char component){
 		else m.setFinalPos_X(m.getInitPos_X() + x);
 	}
 	else if(component == 'y'){
-		double x = (m.getInitVelo_Y() * m.getTime()) + ((m.getAcc_Y * pow(m.getTime(), 2)) / 2);
+		double x = (m.getInitVelo_Y() * m.getTime()) + ((m.getAcc_Y() * pow(m.getTime(), 2)) / 2);
 		double vf = m.getInitVelo_Y() + (m.getAcc_Y() * m.getTime());
 		m.setFinalVelo_Y(vf);
 		if (m.getInitPos_Y() == NULL || m.getInitPos_Y() == 0){
