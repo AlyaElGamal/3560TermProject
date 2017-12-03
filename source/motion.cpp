@@ -37,9 +37,9 @@ Motion::Motion(){
 		intialposition_y = 0;
 		finalposition_y = 0;
 
-		acceleration_vector() = 0;
-		intialvelocity_vector() = 0;
-		finalvelocity_vector() = 0;
+		acceleration_vector = 0;
+		intialvelocity_vector = 0;
+		finalvelocity_vector = 0;
 
 		time = 0;
 		theta = 0;
@@ -259,3 +259,18 @@ void Motion::setFinalPos_Y(double c){ finalposition_y=c;}
 
 void Motion::setTime(double c){ time=c;}
 void Motion::setTheta(double c){ theta=c;}
+
+Motion Motion::input(bool inputType){
+	Motion moe;
+
+	double x, y;
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(/*magnitude*/ /*angle*/ /*x*/ /*y*/);
+	}
+	moe.setInitPos_X(x);
+	moe.setInitPos_Y(y);
+
+	return moe;
+}
+
+void Motion::output(){}

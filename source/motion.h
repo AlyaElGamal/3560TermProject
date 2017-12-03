@@ -106,7 +106,8 @@ class Motion{
 		void setTime(double c);
 		void setTheta(double c);
 
-		void vectorToValues(const string& vector);
+		Motion input(bool inputType);
+		void output();
 
 	private:
 		double acceleration_x;
@@ -121,9 +122,9 @@ class Motion{
 		double intialposition_y;
 		double finalposition_y;
 
-		double acceleration_vector();
-		double intialvelocity_vector();
-		double finalvelocity_vector();
+		double acceleration_vector;
+		double intialvelocity_vector;
+		double finalvelocity_vector;
 
 		double time;
 		double theta;	
