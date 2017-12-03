@@ -94,20 +94,20 @@ class Motion{
 
 	private:
 		double acceleration_x;
-		double intialvelocity_x;
+		double initialvelocity_x;
 		double finalvelocity_x;
-		double intialposition_x;
+		double initialposition_x;
 		double finalposition_x;
 
 		double acceleration_y;
-		double intialvelocity_y;
+		double initialvelocity_y;
 		double finalvelocity_y;
-		double intialposition_y;
+		double initialposition_y;
 		double finalposition_y;
 
-		double acceleration_vector();
-		double intialvelocity_vector();
-		double finalvelocity_vector();
+		double acceleration_vector;
+		double initialvelocity_vector;
+		double finalvelocity_vector;
 
 		double time;
 		double theta;	
