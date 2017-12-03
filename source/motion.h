@@ -91,23 +91,24 @@ class Motion{
 		void setTheta(double c);
 
 		Motion input(bool inputType);
+		void MagAndAngle_to_xAndY(const double magnitude, const double angle, double& x, double& y);
 		void output();
 
 	private:
 		double acceleration_x;
-		double intialvelocity_x;
+		double initialvelocity_x;
 		double finalvelocity_x;
-		double intialposition_x;
+		double initialposition_x;
 		double finalposition_x;
 
 		double acceleration_y;
-		double intialvelocity_y;
+		double initialvelocity_y;
 		double finalvelocity_y;
-		double intialposition_y;
+		double initialposition_y;
 		double finalposition_y;
 
 		double acceleration_vector;
-		double intialvelocity_vector;
+		double initialvelocity_vector;
 		double finalvelocity_vector;
 
 		double time;

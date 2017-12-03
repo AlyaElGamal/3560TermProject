@@ -24,6 +24,8 @@ Last Modified:  09 November 2017
 
 using namespace std;
 
+const double PI  =3.141592653589793238463;
+
 Motion::Motion(){
 		acceleration_x = 0;
 		intialvelocity_x = 0;
@@ -269,12 +271,61 @@ Motion Motion::input(bool inputType){
 
 	double x, y;
 	if(inputType == false){ // if the input is in magnitude and angle
-		MagAndAngle_to_xAndY(/*magnitude*/ /*angle*/ /*x*/ /*y*/);
+		MagAndAngle_to_xAndY(acceleration_x, acceleration_y, x, y);
+	}
+	else{
+		x = acceleration_x;
+		y = acceleration_y;
+	}
+	moe.setAcc_X(x);
+	moe.setAcc_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(initialvelocity_x, initialvelocity_y, x, y);
+	}
+	else{
+		x = initialvelocity_x;
+		y = initialvelocity_y;
+	}
+	moe.setInitVelo_X(x);
+	moe.setInitVelo_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(finalvelocity_x, finalvelocity_y, x, y);
+	}
+	else{
+		x = finalvelocity_x;
+		y = finalvelocity_y;
+	}	
+	moe.setFinalVelo_X(x);
+	moe.setFinalVelo_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(initialposition_x, initialposition_y, x, y);
+	}
+	else{
+		x = initialposition_x;
+		y = initialposition_y;
 	}
 	moe.setInitPos_X(x);
 	moe.setInitPos_Y(y);
 
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(finalposition_x, finalposition_y, x, y);
+	}
+	else{
+		x = finalposition_x;
+		y = finalposition_y;
+	}
+	moe.setFinalPos_X(x);
+	moe.setFinalPos_Y(y);
+
 	return moe;
+}
+
+void Motion::MagAndAngle_to_xAndY(const double magnitude, const double angle, double& x, double& y){
+	x = cos(angle * PI / 180.0);
+	y = sin(angle * PI / 180.0);
 }
 
 void Motion::output(){}
