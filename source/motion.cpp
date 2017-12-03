@@ -45,15 +45,19 @@ Motion::Motion(){
 		theta = 0;
 }
 
+Motion Motion::solve(Motion m){
+
+}
+
 void Motion::has_x_t_vf(Motion m, char component){
 	if(component == 'x'){
-		double vi = ((2 * ((m.getFinalPos_X() - m.getInitPos_X()) / m.getTime()) - m.getFinalVelo_X();
+		double vi = ((2 * (m.getFinalPos_X() - m.getInitPos_X())) / m.getTime()) - m.getFinalVelo_X();
 		double a = (m.getFinalVelo_X() - vi) / m.getTime();
 		m.setInitVelo_X(vi);
 		m.setAcc_X(a);
 	}
 	else if(component == 'y'){
-		double vi = ((2 * ((m.getFinalPos_Y() - m.getInitPos_Y()) / m.getTime()) - m.getFinalVelo_Y();
+		double vi = ((2 * (m.getFinalPos_Y() - m.getInitPos_Y())) / m.getTime()) - m.getFinalVelo_Y();
 		double a = (m.getFinalVelo_Y() - vi) / m.getTime();
 		m.setInitVelo_Y(vi);
 		m.setAcc_Y(a);
