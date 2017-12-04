@@ -43,18 +43,18 @@ class Motion{
 
 		//calculation functions
 
-		Motion solve(Motion m);
+		Motion solve(Motion &m);
 		
-		void has_x_t_vf(Motion m, char component);
-		void has_x_t_vi(Motion m, char component);
-		void has_x_t_a(Motion m, char component);
-		void has_x_vf_vi(Motion m, char component);
-		void has_x_vi_a(Motion m, char component);
-		void has_x_vf_a(Motion m, char component);
-		void has_t_vf_vi(Motion m, char component);
-		void has_t_vf_a(Motion m, char component);
-		void has_t_vi_a(Motion m, char component);
-		void has_vf_vi_a(Motion m, char component);
+		void has_x_t_vf(Motion &m, char component);
+		void has_x_t_vi(Motion &m, char component);
+		void has_x_t_a(Motion &m, char component);
+		void has_x_vf_vi(Motion &m, char component);
+		void has_x_vi_a(Motion &m, char component);
+		void has_x_vf_a(Motion &m, char component);
+		void has_t_vf_vi(Motion &m, char component);
+		void has_t_vf_a(Motion &m, char component);
+		void has_t_vi_a(Motion &m, char component);
+		void has_vf_vi_a(Motion &m, char component);
 
 		/*Parameters for these equations are correct*/
 
