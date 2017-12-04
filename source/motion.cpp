@@ -14,7 +14,7 @@ Authors:      	Ignatius Smith
 File:           motion.cpp                                            
 Description:    This file includes the function declarations for projectile motion
 		equations.                                             
-Last Modified:  09 November 2017                                                
+Last Modified:  03 December 2017                                                
 ********************************************************************************/
 
 #include "motion.h"
@@ -25,6 +25,8 @@ Last Modified:  09 November 2017
 #include <iostream>
 
 using namespace std;
+
+const double PI  =3.141592653589793238463;
 
 Motion::Motion(){
 		acceleration_x = NULL;
@@ -39,9 +41,16 @@ Motion::Motion(){
 		initialposition_y = NULL;
 		finalposition_y = NULL;
 
+<<<<<<< HEAD
 		acceleration_vector = NULL;
 		initialvelocity_vector = NULL;
 		finalvelocity_vector = NULL;
+=======
+		acceleration_vector = 0;
+		initialvelocity_vector = 0;
+		initialvelocity_vector = 0;
+		finalvelocity_vector = 0;
+>>>>>>> 6f3514ee957c413adcad299def7ad879a6c78c4c
 
 		time = NULL;
 		theta = NULL;
@@ -406,3 +415,67 @@ void Motion::setFinalPos_Y(double c){ finalposition_y=c;}
 
 void Motion::setTime(double c){ time=c;}
 void Motion::setTheta(double c){ theta=c;}
+
+Motion Motion::input(bool inputType){
+	Motion moe;
+
+	double x, y;
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(acceleration_x, acceleration_y, x, y);
+	}
+	else{
+		x = acceleration_x;
+		y = acceleration_y;
+	}
+	moe.setAcc_X(x);
+	moe.setAcc_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(initialvelocity_x, initialvelocity_y, x, y);
+	}
+	else{
+		x = initialvelocity_x;
+		y = initialvelocity_y;
+	}
+	moe.setInitVelo_X(x);
+	moe.setInitVelo_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(finalvelocity_x, finalvelocity_y, x, y);
+	}
+	else{
+		x = finalvelocity_x;
+		y = finalvelocity_y;
+	}	
+	moe.setFinalVelo_X(x);
+	moe.setFinalVelo_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(initialposition_x, initialposition_y, x, y);
+	}
+	else{
+		x = initialposition_x;
+		y = initialposition_y;
+	}
+	moe.setInitPos_X(x);
+	moe.setInitPos_Y(y);
+
+	if(inputType == false){ // if the input is in magnitude and angle
+		MagAndAngle_to_xAndY(finalposition_x, finalposition_y, x, y);
+	}
+	else{
+		x = finalposition_x;
+		y = finalposition_y;
+	}
+	moe.setFinalPos_X(x);
+	moe.setFinalPos_Y(y);
+
+	return moe;
+}
+
+void Motion::MagAndAngle_to_xAndY(const double magnitude, const double angle, double& x, double& y){
+	x = cos(angle * PI / 180.0);
+	y = sin(angle * PI / 180.0);
+}
+
+void Motion::output(){}

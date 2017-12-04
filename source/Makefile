@@ -12,7 +12,7 @@
 #		Charlie Harover
 #                                            
 # File:         Makefile                      
-# Last Modified:17 November 2017                                                
+# Last Modified:03 December 2017                                                
 ##################################################################################
 
 all: build
@@ -27,4 +27,4 @@ motion.o: motion.cpp motion.h gravity.h
 	g++ -c motion.cpp
 
 clean:
-	rm *.o projectiles
+	rm *.o projectiles a.out

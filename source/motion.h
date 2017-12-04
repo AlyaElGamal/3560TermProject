@@ -14,7 +14,7 @@ Authors:      	Ignatius Smith
 File:           motion.h                                                         
 Description:    This file includes the function declarations for projectile motion
 		equations.                                             
-Last Modified:  17 November 2017                                                
+Last Modified:  03 December 2017                                                
 ********************************************************************************/
 
 #include <cstdlib>
@@ -90,7 +90,9 @@ class Motion{
 		void setTime(double c);
 		void setTheta(double c);
 
-		void vectorToValues(const string& vector);
+		Motion input(bool inputType);
+		void MagAndAngle_to_xAndY(const double magnitude, const double angle, double& x, double& y);
+		void output();
 
 	private:
 		double acceleration_x;
