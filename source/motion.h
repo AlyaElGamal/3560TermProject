@@ -14,7 +14,7 @@ Authors:      	Ignatius Smith
 File:           motion.h                                                         
 Description:    This file includes the function declarations for projectile motion
 		equations.                                             
-Last Modified:  17 November 2017                                                
+Last Modified:  03 December 2017                                                
 ********************************************************************************/
 
 #include <cstdlib>
