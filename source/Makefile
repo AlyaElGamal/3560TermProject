@@ -27,4 +27,4 @@ motion.o: motion.cpp motion.h gravity.h
 	g++ -c motion.cpp
 
 clean:
-	rm *.o projectiles
+	rm *.o projectiles a.out

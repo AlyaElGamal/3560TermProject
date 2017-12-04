@@ -40,7 +40,7 @@ Motion::Motion(){
 		finalposition_y = 0;
 
 		acceleration_vector = 0;
-		intialvelocity_vector = 0;
+		initialvelocity_vector = 0;
 		initialvelocity_vector = 0;
 		finalvelocity_vector = 0;
 
