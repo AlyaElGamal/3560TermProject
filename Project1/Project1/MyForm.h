@@ -229,6 +229,7 @@ namespace Project1 {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->BackColor = System::Drawing::Color::LightGray;
 			this->tabPage1->Controls->Add(this->label10);
 			this->tabPage1->Controls->Add(this->label9);
 			this->tabPage1->Controls->Add(this->textBox5);
@@ -248,7 +249,6 @@ namespace Project1 {
 			this->tabPage1->Size = System::Drawing::Size(219, 268);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Coordinate";
-			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
 			// label10
 			// 
@@ -468,7 +468,7 @@ namespace Project1 {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Switch);
 			this->Controls->Add(this->button1);
-			this->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Cursor = System::Windows::Forms::Cursors::Arrow;
 			this->Name = L"MyForm";
 			this->Text = L"Projectile Motion";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
