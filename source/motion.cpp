@@ -29,177 +29,34 @@ using namespace std;
 const double PI  =3.141592653589793238463;
 
 Motion::Motion(){
-		acceleration_x = NULL;
-		initialvelocity_x = NULL;
-		finalvelocity_x = NULL;
-		initialposition_x = NULL;
-		finalposition_x = NULL;
+		acceleration_x = 0;
+		initialvelocity_x = 0;
+		finalvelocity_x = 0;
+		initialposition_x = 0;
+		finalposition_x = 0;
 
-		acceleration_y = EARTHG;
-		initialvelocity_y = NULL;
-		finalvelocity_y = NULL;
-		initialposition_y = NULL;
-		finalposition_y = NULL;
+		acceleration_y = 0;
+		initialvelocity_y = 0;
+		finalvelocity_y = 0;
+		initialposition_y = 0;
+		finalposition_y = 0;
 
-<<<<<<< HEAD
-		acceleration_vector = NULL;
-		initialvelocity_vector = NULL;
-		finalvelocity_vector = NULL;
-=======
+
+		acceleration_vector = 0;
+		initialvelocity_vector = 0;
+		finalvelocity_vector = 0;
+
 		acceleration_vector = 0;
 		initialvelocity_vector = 0;
 		initialvelocity_vector = 0;
 		finalvelocity_vector = 0;
->>>>>>> 6f3514ee957c413adcad299def7ad879a6c78c4c
 
-		time = NULL;
-		theta = NULL;
+
+		time = 0;
+		theta = 0;
 }
 
-Motion Motion::solve(Motion &m){
-	if(m.getFinalPos_X() == NULL && m.getTime() == NULL) m.has_vf_vi_a(m, 'x'); return m;
-	/*has_x_t_vf(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_t_vi(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_t_a(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_vf_vi(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_vi_a(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_vf_a(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_t_vf_vi(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_t_vf_a(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_t_vi_a(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_vf_vi_a(m, 'x');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-
-	has_x_t_vf(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_t_vi(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_t_a(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_vf_vi(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_vi_a(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_x_vf_a(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_t_vf_vi(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_t_vf_a(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_t_vi_a(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;
-	has_vf_vi_a(m, 'y');
-	cout << "Intial Pos: " << m.getInitPos_X() << "i + " << m.getInitPos_Y() << "j" << endl;
-	cout << "Final Pos: " << m.getFinalPos_X() << "i + " << m.getFinalPos_Y() << "j" << endl;
-	cout << "Intial Velo: " << m.getInitVelo_X() << "i + " << m.getInitVelo_Y() << "j" << endl;
-	cout << "Final Velo: " << m.getFinalVelo_X() << "i + " << m.getFinalVelo_Y() << "j" << endl;
-	cout << "Acc: " << m.getAcc_X() << "i + " << m.getAcc_Y() << "j" << endl;
-	cout << "Time: " << m.getTime() << endl;*/
-}
+Motion Motion::solve(Motion &m){ }
 
 void Motion::has_x_t_vf(Motion &m, char component){
 	if(component == 'x'){
@@ -250,15 +107,15 @@ void Motion::has_x_t_a(Motion &m, char component){
 
 void Motion::has_x_vf_vi(Motion &m, char component){
 	if(component == 'x'){
-		double t = (2 * (m.getFinalPos_X() - m.getInitPos_X())) / (m.getInitVelo_X() + m.getFinalVelo_X());
-		double a = (m.getFinalVelo_X() - m.getInitVelo_X()) / t;
-		m.setTime(t);
+		//double t = (2 * (m.getFinalPos_X() - m.getInitPos_X())) / (m.getInitVelo_X() + m.getFinalVelo_X());
+		double a = (m.getFinalVelo_X() - m.getInitVelo_X()) / m.getTime();
+		//m.setTime(t);
 		m.setAcc_X(a);
 	}
 	else if(component == 'y'){
-		double t = (2 * (m.getFinalPos_Y() - m.getInitPos_Y())) / (m.getInitVelo_Y() + m.getFinalVelo_Y());
-		double a = (m.getFinalVelo_Y() - m.getInitVelo_Y()) / t;
-		m.setTime(t);
+		//double t = (2 * (m.getFinalPos_Y() - m.getInitPos_Y())) / (m.getInitVelo_Y() + m.getFinalVelo_Y());
+		double a = (m.getFinalVelo_Y() - m.getInitVelo_Y()) / m.getTime();
+		//m.setTime(t);
 		m.setAcc_Y(a);
 	}
 }
@@ -266,30 +123,30 @@ void Motion::has_x_vf_vi(Motion &m, char component){
 void Motion::has_x_vi_a(Motion &m, char component){
 	if(component == 'x'){
 		double vf = sqrt( pow(m.getInitVelo_X(), 2) + (2 * m.getAcc_X() * (m.getFinalPos_X()-m.getInitPos_X()) ));
-		double t = (vf - m.getInitVelo_X()) / m.getAcc_X();
+		//double t = (vf - m.getInitVelo_X()) / m.getAcc_X();
 		m.setFinalVelo_X(vf);
-		m.setTime(t);
+		//m.setTime(t);
 	}
 	else if(component == 'y'){
 		double vf = sqrt( pow(m.getInitVelo_Y(), 2) + (2 * m.getAcc_Y() * (m.getFinalPos_Y()-m.getInitPos_Y()) ));
-		double t = (vf - m.getInitVelo_Y()) / m.getAcc_Y();
+		//double t = (vf - m.getInitVelo_Y()) / m.getAcc_Y();
 		m.setFinalVelo_Y(vf);
-		m.setTime(t);
+		//m.setTime(t);
 	}
 }
 
 void Motion::has_x_vf_a(Motion &m, char component){
 	if(component == 'x'){
 		double vi = sqrt( pow(m.getFinalVelo_X(), 2) - (2 * m.getAcc_X() * (m.getFinalPos_X()-m.getInitPos_X()) ));
-		double t = (m.getFinalVelo_X() - vi) / m.getAcc_X();
+		//double t = (m.getFinalVelo_X() - vi) / m.getAcc_X();
 		m.setInitVelo_X(vi);
-		m.setTime(t);
+		//m.setTime(t);
 	}
 	else if(component == 'y'){
 		double vi = sqrt( pow(m.getFinalVelo_Y(), 2) - (2 * m.getAcc_Y() * (m.getFinalPos_Y()-m.getInitPos_Y()) ));
-		double t = (m.getFinalVelo_Y() - vi) / m.getAcc_Y();
+		//double t = (m.getFinalVelo_Y() - vi) / m.getAcc_Y();
 		m.setInitVelo_Y(vi);
-		m.setTime(t);
+		//m.setTime(t);
 	}
 }
 
@@ -318,24 +175,16 @@ void Motion::has_t_vf_vi(Motion &m, char component){
 
 void Motion::has_t_vf_a(Motion &m, char component){
 	if(component == 'x'){
-		double vi = m.getFinalVelo_X() - (m.getAcc_X() * m.getTime());
-		double x = ((vi + m.getFinalVelo_X()) / 2) * m.getTime();
-		m.setInitVelo_X(vi);
-		if (m.getInitPos_X() == NULL || m.getInitPos_X() == 0){
-			m.setInitPos_X(0);
-			m.setFinalPos_X(x);
-		}
-		else m.setFinalPos_X(m.getInitPos_X() + x);
+		//double vi = m.getFinalVelo_X() - (m.getAcc_X() * m.getTime());
+		double x = ((m.getInitVelo_X() + m.getFinalVelo_X()) / 2) * m.getTime();
+		//m.setInitVelo_X(vi);
+		m.setFinalPos_X(m.getInitPos_X() + x);
 	}
 	else if(component == 'y'){
-		double vi = m.getFinalVelo_Y() - (m.getAcc_Y() * m.getTime());
-		double x = ((vi + m.getFinalVelo_Y()) / 2) * m.getTime();
-		m.setInitVelo_Y(vi);
-		if (m.getInitPos_Y() == NULL || m.getInitPos_Y() == 0){
-			m.setInitPos_Y(0);
-			m.setFinalPos_Y(x);
-		}
-		else m.setFinalPos_Y(m.getInitPos_Y() + x);
+		//double vi = m.getFinalVelo_Y() - (m.getAcc_Y() * m.getTime());
+		double x = ((m.getInitVelo_Y() + m.getFinalVelo_Y()) / 2) * m.getTime();
+		//m.setInitVelo_Y(vi);
+		 m.setFinalPos_Y(m.getInitPos_Y() + x);
 	}
 }
 
@@ -365,23 +214,23 @@ void Motion::has_t_vi_a(Motion &m, char component){
 void Motion::has_vf_vi_a(Motion &m, char component){
 	if(component == 'x'){
 		double t = (m.getFinalVelo_X() - m.getInitVelo_X()) / m.getAcc_X();
-		double x = ((m.getInitVelo_X() + m.getFinalVelo_X()) / 2) * t;
+		//double x = ((m.getInitVelo_X() + m.getFinalVelo_X()) / 2) * t;
 		m.setTime(t);
-		if (m.getInitPos_X() == NULL || m.getInitPos_X() == 0){
+		/*if (m.getInitPos_X() == NULL || m.getInitPos_X() == 0){
 			m.setInitPos_X(0);
 			m.setFinalPos_X(x);
 		}
-		else m.setFinalPos_X(m.getInitPos_X() + x);
+		else m.setFinalPos_X(m.getInitPos_X() + x);*/
 	}
 	else if(component == 'y'){
 		double t = (m.getFinalVelo_Y() - m.getInitVelo_Y()) / m.getAcc_Y();
-		double x = ((m.getInitVelo_Y() + m.getFinalVelo_Y()) / 2) * t;
+		//double x = ((m.getInitVelo_Y() + m.getFinalVelo_Y()) / 2) * t;
 		m.setTime(t);
-		if (m.getInitPos_Y() == NULL || m.getInitPos_Y() == 0){
+		/*if (m.getInitPos_Y() == NULL || m.getInitPos_Y() == 0){
 			m.setInitPos_Y(0);
 			m.setFinalPos_Y(x);
 		}
-		else m.setFinalPos_Y(m.getInitPos_Y() + x);
+		else m.setFinalPos_Y(m.getInitPos_Y() + x);*/
 	}
 }
 
